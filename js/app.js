@@ -53,12 +53,10 @@ function render() {
   })
   if (!winner) {
     messageEl.innerText = `Next player's turn`
-  }
-  else if (winner) {
-    messageEl.innerText = `Congratulations!`
-  }
-  else {
+  } else if (winner === 'T') {
     messageEl.innerText = `Tie!`
+  } else {
+    messageEl.innerText = `Congratulations!`
   }
 }
 
@@ -66,5 +64,15 @@ function handleClick(evt) {
   let sqIdx = parseInt(evt.target.id.replace('sq', ''))
   if (board[sqIdx] || winner) {
   return
+  }
+  board[sqIdx] = turn
+  turn *= -1
+  winner = getWinner()
+  render()
+}
+
+function getWinner() {
+  for (let i = 0; i < winningCombos.length; i++) {
+    
   }
 }
