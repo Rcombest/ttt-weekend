@@ -18,7 +18,7 @@ let board, turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll("section > div")
 const messageEl = document.querySelector("#message")
-
+const resetBtnEl = document.querySelector('#reset-button')
 
 
 
@@ -26,8 +26,7 @@ const messageEl = document.querySelector("#message")
 squareEls.forEach((square) => {
   square.addEventListener('click', handleClick)
 })
-  
-console.log(squareEls)
+resetBtnEl.addEventListener('click', init)  
 /*-------------------------------- Functions --------------------------------*/
 init()
 
