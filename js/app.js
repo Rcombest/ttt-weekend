@@ -32,7 +32,7 @@ console.log(squareEls)
 init()
 
 function init() {
-  board = [null, 1, null, -1, null, null, null, null, null,]
+  board = [null, null, null, null, null, null, null, null, null,]
   turn = 1  
   winner = null
   render()
@@ -73,6 +73,12 @@ function handleClick(evt) {
 
 function getWinner() {
   for (let i = 0; i < winningCombos.length; i++) {
-    
+    if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3) 
+    return board[winningCombos[i][0]]
+  }
+  if (board.includes(null)) {
+    return null
+  } else {
+    return 'T'
   }
 }
