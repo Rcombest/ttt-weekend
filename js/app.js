@@ -56,6 +56,7 @@ function render() {
     messageEl.innerText = `Tie!`
   } else {
     messageEl.innerText = `Congratulations!`
+    confetti.start(2000)
   }
 }
 
