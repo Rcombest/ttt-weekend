@@ -55,7 +55,7 @@ function render() {
   } else if (winner === 'T') {
     messageEl.innerText = `Tie!`
   } else {
-    messageEl.innerText = `Congratulations!`
+    messageEl.innerText = `Congratulations Agent Cooper! `
     confetti.start(2000)
   }
 }
